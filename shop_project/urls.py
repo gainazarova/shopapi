@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/v1/orders/', CreateOrderView.as_view()),
     path('api/v1/orders/own/', UserOrderList.as_view()),
     path('api/v1/orders/<int:pk>/', UpdateOrderStatusView.as_view()),
+    path('api/v1/ratings/', include('rating.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
